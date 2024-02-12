@@ -29,6 +29,7 @@ public class Zad7a {
         Assert.assertTrue(checkbox1.isSelected());
         Assert.assertFalse(checkbox2.isSelected());
 
+
     }
 
 
