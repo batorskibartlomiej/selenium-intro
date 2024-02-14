@@ -1,25 +1,21 @@
-package framework;
+package framework.tests;
 
-import org.openqa.selenium.By;
+import framework.page.objects.FooterPage;
+import framework.page.objects.LandingPage;
+import framework.page.objects.LoginPage;
+import framework.page.objects.TopMenuPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class FailedLoginTests {
+import static org.testng.AssertJUnit.assertTrue;
 
-    public WebDriver driver;
+public class FailedLoginTests extends TestBase{
 
 
-    @BeforeMethod
-    public void Test(){
-        System.setProperty("chromedriver", "C:/drivers/chromedriver.exe");
-        driver= new ChromeDriver();
-        driver.navigate().to("https://przyklady.javastart.pl/jpetstore/");
-    }
 
     @Test
     public void asUserTryToLogInWithIncorrectLoginAndPassword(){
@@ -38,15 +34,11 @@ public class FailedLoginTests {
         Assert.assertEquals(warningMessage, "Invalid username or password. Signon failed.");
     }
 
-    @AfterMethod
-    public void afterTest() {
 
-        //Zamknięcie okna przeglądarki
-        driver.close();
 
-        //Zabicie procesu WebDrivera
-        driver.quit();
-    }
+
+
+
 
 
 
