@@ -20,6 +20,9 @@ public class LoginPage {
     @FindBy(css="#Content ul[class='messages'] li")
     WebElement messageLabel;
 
+    @FindBy(xpath="//*[@id='SidebarContent']/a[1]/img")
+    private WebElement fishPage;
+
 
 
     private WebDriver driver;
@@ -46,6 +49,10 @@ public class LoginPage {
     public String getWarningMessage(){
         String warningText = messageLabel.getText();
         return warningText;
+    }
+
+    public void clickOnFishPage(){
+        fishPage.click();
     }
 
 }
