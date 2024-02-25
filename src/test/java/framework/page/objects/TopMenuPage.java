@@ -1,6 +1,6 @@
 package framework.page.objects;
 
-import org.openqa.selenium.By;
+import framework.driver.manager.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,12 +12,12 @@ public class TopMenuPage {
     WebElement signOnLink;
 
 
-    private WebDriver driver;
 
-    public TopMenuPage(WebDriver driver){
 
-        this.driver= driver;
-        PageFactory.initElements(driver, this);
+    public TopMenuPage(){
+
+
+        PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
     public void clickOnSignInLink(){

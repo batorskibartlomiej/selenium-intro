@@ -1,5 +1,6 @@
 package framework.page.objects;
 
+import framework.driver.manager.DriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -7,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class AngelFishPage {
 
-    private WebDriver driver;
+
 
 
 
@@ -16,9 +17,9 @@ public class AngelFishPage {
 
 
 
-    public AngelFishPage(WebDriver driver){
-        this.driver= driver;
-        PageFactory.initElements(driver,this);
+    public AngelFishPage(){
+
+        PageFactory.initElements(DriverManager.getWebDriver(),this);
 
     }
 

@@ -9,22 +9,22 @@ public class ShoppingCartTest extends TestBase{
 
     @Test
     public void asNotLoggedInUserIShallNotProceedToCheckout(){
-        LandingPage landingPage = new LandingPage(driver);
+        LandingPage landingPage = new LandingPage();
         landingPage.clickOnEnterStoreLink();
 
-        LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage();
         loginPage.clickOnFishPage();
 
-        FishPage fishPage = new FishPage(driver);
+        FishPage fishPage = new FishPage();
         fishPage.clickOnAngelfishId();
 
-        AngelFishPage angelFishPage = new AngelFishPage(driver);
+        AngelFishPage angelFishPage = new AngelFishPage();
         angelFishPage.clickOnAddToCartSmallAngelFish();
 
-        ShoppingCartPage shoppingCartPage = new ShoppingCartPage(driver);
+        ShoppingCartPage shoppingCartPage = new ShoppingCartPage();
         shoppingCartPage.clickProceedCheckoutButton();
 
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage();
         String warningMessage = loginPage.getWarningMessage();
         assertEquals(warningMessage, "You must sign on before attempting to check out. Please sign on and try checking out again.");
 
