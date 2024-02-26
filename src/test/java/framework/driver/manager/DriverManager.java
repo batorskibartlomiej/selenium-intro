@@ -1,11 +1,14 @@
 package framework.driver.manager;
 
+import framework.driver.BrowserFactory;
+import framework.driver.BrowserType;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import static framework.driver.BrowserType.*;
 
 public class DriverManager {
 
-
+    private static final BrowserType BROWSER_TYPE = CHROME;
     private static WebDriver driver;
 
     private DriverManager(){
@@ -15,8 +18,7 @@ public class DriverManager {
     public static WebDriver getWebDriver(){
 
         if(driver == null){
-            System.setProperty("webdriver.chrome.driver", "C:/drivers/chromedriver.exe");
-            driver= new ChromeDriver();
+            driver= BrowserFactory.getBrowser(CHROME);
         }
         return driver;
     }
@@ -24,7 +26,9 @@ public class DriverManager {
 
     public static void disposeDriver(){
         driver.close();
-        driver.quit();
+        if (!BROWSER_TYPE.equals(BrowserType.FIREFOX)){
+            driver.quit();
+        }
         driver= null;
     }
 }
