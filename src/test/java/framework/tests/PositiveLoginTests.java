@@ -7,23 +7,22 @@ import framework.page.objects.TopMenuPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import static org.testng.AssertJUnit.assertTrue;
+
 public class PositiveLoginTests extends TestBase{
 
     @Test
     public void asUserLoginUsingValidLoginAndPassword() {
 
         LandingPage landingPage = new LandingPage();
-        landingPage.clickOnEnterStoreLink();
+        boolean isBannerAfterLoginDisplayed=landingPage
+                .clickOnEnterStoreLink()
+                .clickOnSignInLink()
+                .typeIntoUserNameField("j2ee")
+                .typeIntoPasswordField("j2ee")
+                .clickOnLoginButton()
+                .isBannerAfterLoginDisplayed();
 
-        TopMenuPage topMenuPage = new TopMenuPage();
-        topMenuPage.clickOnSignInLink();
-
-        LoginPage loginPage = new LoginPage();
-        loginPage.typeIntoUserNameField("j2ee");
-        loginPage.typeIntoPasswordField("j2ee");
-        loginPage.clickOnLoginButton();
-        FooterPage footerPage = new FooterPage();
-
-        Assert.assertTrue(footerPage.isBannerAfterLoginDisplayed());
+        assertTrue(isBannerAfterLoginDisplayed);
     }
 }
