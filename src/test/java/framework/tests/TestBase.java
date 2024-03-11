@@ -2,8 +2,11 @@ package framework.tests;
 
 import framework.driver.manager.DriverManager;
 import framework.driver.manager.DriverUtils;
+import framework.navigation.ApplicationURLs;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import static framework.navigation.ApplicationURLs.APPLICATION_URL;
 
 public class TestBase {
 
@@ -14,7 +17,7 @@ public class TestBase {
     public void Test(){
         DriverManager.getWebDriver();
         DriverUtils.setInitialConfiguration();
-        DriverUtils.navigateToPage("http://przyklady.javastart.pl/jpetstore/");
+        DriverUtils.navigateToPage(APPLICATION_URL);
     }
 
     @AfterMethod
