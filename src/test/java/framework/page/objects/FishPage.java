@@ -1,12 +1,16 @@
 package framework.page.objects;
 
 import framework.driver.manager.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class FishPage {
 
+private Logger logger= LogManager.getRootLogger();
 
 
     @FindBy(css= "tr:nth-child(2) a")
@@ -21,8 +25,11 @@ public class FishPage {
         PageFactory.initElements(DriverManager.getWebDriver(), this);
     }
 
-    public void clickOnAngelfishId(){
+    public AngelFishPage clickOnAngelfishId(){
+        WaitForElement.waitUntilElementIsVisible(angelfishIdlink);
         angelfishIdlink.click();
+        logger.info("Clicked on AngelFish link");
+        return new AngelFishPage();
     }
 
 

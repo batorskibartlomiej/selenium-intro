@@ -68,8 +68,11 @@ public class LoginPage {
         return warningText;
     }
 
-    public void clickOnFishPage(){
+    public FishPage clickOnFishPage(){
+        WaitForElement.waitUntilElementIsVisible(fishPage);
         fishPage.click();
+        logger.info("Clicked on fish image");
+        return new FishPage();
     }
 
 }

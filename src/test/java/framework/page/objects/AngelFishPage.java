@@ -1,13 +1,16 @@
 package framework.page.objects;
 
 import framework.driver.manager.DriverManager;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import waits.WaitForElement;
 
 public class AngelFishPage {
 
-
+    private Logger logger= LogManager.getRootLogger();
 
 
 
@@ -23,8 +26,11 @@ public class AngelFishPage {
     }
 
 
-    public void clickOnAddToCartSmallAngelFish(){
+    public ShoppingCartPage clickOnAddToCartSmallAngelFish(){
+
+        WaitForElement.waitUntilElementIsVisible(smallAngelfishAddToCartButton);
         smallAngelfishAddToCartButton.click();
+        return  new ShoppingCartPage();
     }
 
 
