@@ -1,6 +1,6 @@
-package framework.page.objects;
+package objects;
 
-import framework.driver.manager.DriverManager;
+import driver.manager.DriverManager;
 import org.openqa.selenium.support.PageFactory;
 
 public class CheckoutPage {

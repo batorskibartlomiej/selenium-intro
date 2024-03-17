@@ -1,6 +1,8 @@
-package framework.tests;
+package tests;
 
-import framework.page.objects.*;
+import objects.*;
+import objects.LandingPage;
+import objects.LoginPage;
 import org.testng.annotations.Test;
 
 import static org.testng.AssertJUnit.assertEquals;

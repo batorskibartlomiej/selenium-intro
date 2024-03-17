@@ -1,4 +1,4 @@
-package framework.driver;
+package driver;
 
 public enum BrowserType {
 

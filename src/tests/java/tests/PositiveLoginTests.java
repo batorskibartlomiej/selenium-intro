@@ -1,14 +1,10 @@
-package framework.tests;
+package tests;
 
-import framework.driver.manager.DriverUtils;
-import framework.page.objects.FooterPage;
-import framework.page.objects.LandingPage;
-import framework.page.objects.LoginPage;
-import framework.page.objects.TopMenuPage;
-import org.testng.Assert;
+import driver.manager.DriverUtils;
+import objects.LoginPage;
 import org.testng.annotations.Test;
 
-import static framework.navigation.ApplicationURLs.LOGIN_URL;
+import static navigation.ApplicationURLs.LOGIN_URL;
 import static org.testng.AssertJUnit.assertTrue;
 
 public class PositiveLoginTests extends TestBase{

@@ -1,6 +1,6 @@
-package framework.driver.manager;
+package driver.manager;
 
-import framework.driver.manager.DriverManager;
+import driver.manager.DriverManager;
 
 public class DriverUtils {
 
